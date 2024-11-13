@@ -1,0 +1,128 @@
+/* static/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #0e272d;
+    padding: 20px;
+    background-image: url('static/mh.jpg'); /* Cybersecurity background */
+    background-size: cover;
+    background-position: center;
+    animation: backgroundAnimation 10s ease-in-out infinite;  /* Background animation */
+    position: relative;
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+.header-line {
+    width: 100%;
+    background-color: #031e14; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 10px 0; /* Reduced padding to make the header smaller */
+    font-size: 20px; /* Smaller font size */
+    font-weight: bold;
+    position: fixed; /* Fix it at the top of the screen */
+    top: 0; /* Position it at the top */
+    left: 0; /* Make it span across the full width */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Background animation */
+@keyframes backgroundAnimation {
+    0% { background-position: left top; }
+    50% { background-position: right bottom; }
+    100% { background-position: left top; }
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 5vw 5%; /* Adjust padding with viewport width and percentage */
+    background-color: rgba(255, 255, 255, 0.8);  /* Transparent background for a more modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 8px;  /* Rounded corners */
+    transform: scale(1);
+    animation: popIn 0.5s ease-out;
+    z-index: 1;  /* Ensure the container stays above the boxes */
+    margin-top: 120px; /* Add margin-top to avoid overlapping the fixed header */
+}
+
+/* Animation for the container */
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+textarea, input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 12px;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box;
+    border-radius: 5px;  /* Rounded edges for inputs */
+    border: 2px solid #0e272d;  /* Border color matches the body background */
+    background-color: #f4f4f4;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+textarea:focus, input:focus {
+    border-color: #00ffcc;  /* Focus border color */
+    background-color: #e0e0e0;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    width: 100px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #0e272d;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #00ffcc;  /* Button hover effect */
+    transform: translateY(-3px);  /* Slight lift effect */
+}
+
+button:active {
+    transform: translateY(1px);  /* Button press effect */
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Adjust body padding on mobile */
+    }
+
+    .header-line {
+        padding: 10px 0; /* Adjust padding for header line on smaller screens */
+        font-size: 18px; /* Smaller font for mobile */
+    }
+
+    .container {
+        padding: 10vw 5%; /* Adjust padding with more flexibility */
+        margin-top: 140px; /* Add larger margin-top for mobile to ensure container isn't inside header */
+    }
+
+    textarea, input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 80px; /* Adjust button width */
+        font-size: 14px;
+        padding: 8px;
+    }
+}
